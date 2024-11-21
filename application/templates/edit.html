@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %}
+Edit Student
+{% endblock %}
+
+{% block content %}
+<head>
+    <title>Edit Student</title>
+    <style>
+        /* Container for the form */
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        /* Header style */
+        h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #002b5e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Card styling */
+        .card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Input field styles */
+        .card input[type="text"],
+        .card input[type="email"],
+        .card select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #3b648e;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .card input:focus {
+            border-color: #80bdff;
+            outline: none;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #12a5f1;
+            border: none;
+            color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-outline-secondary {
+            padding: 10px 25px;
+            color: #6c757d;
+            border: 1px solid #5d9ec6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-left: 8px;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: #ffffff;
+        }
+
+        /* Center alignment */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Margins */
+        .mt-3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5>Edit Student</h5>
+
+        <div class="card">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                    <a href="" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
